@@ -1,28 +1,11 @@
-#include "unit_xxxx.hpp"
+#include "unit_a.hpp"
 
-void run_finalCheck(bool finalCheck);
-int main()
+int
+main()
 {
-  /* Start of Test: */
-  bool finalCheck;
+    /* Start of Test: */
+    run_unit_a();
+    /* End of Test. */
 
-  finalCheck = run_unit_xxxx();
-
-  run_finalCheck(finalCheck);
-  /* End of Test. */
-
-  return 0;
-}
-
-void run_finalCheck(bool finalCheck) {
-  if (finalCheck)
-  {
-    std::cout << std::endl;
-    std::cout << "***********************************************************************" << std::endl;
-    std::cout << "***********************************************************************" << std::endl;
-    std::cout << "--OK!--> ALL PASSED. END OF TEST RUN." << std::endl << std::endl;
-  }
-  else {
-    throw std::out_of_range("TEST: INCOMPLETE. ABORTED.");
-  }
+    return 0;
 }

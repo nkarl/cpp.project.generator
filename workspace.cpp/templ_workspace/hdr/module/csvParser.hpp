@@ -71,6 +71,7 @@
 #include <iostream>
 #include <omp.h>
 #include <sstream>
+#include <list>
 #include <vector>
 
 namespace parser_err {
@@ -137,7 +138,7 @@ private:
   std::string raw_line;
 
   // Interface for accessing extracted string data.
-  std::vector<std::vector<std::string> *> database;
+  std::vector<std::list<std::string> *> database;
 
   // Unload database from memory.
   void _clearDatabase() {
@@ -170,13 +171,13 @@ private:
   }
 
   // Extract a packet of strings and Return a reference to it.
-  std::vector<std::string> &_rawToStringPacket() {
+  std::list<std::string> &_rawToStringPacket() {
     std::istringstream line_stream;
     static std::string token;
 
     // Create a packet at the local scope
-    static std::vector<std::string> *packet = nullptr;
-    packet = new std::vector<std::string>;
+    static std::list<std::string> *packet = nullptr;
+    packet = new std::list<std::string>;
 
     // Handle the return carriage character
     size_t tail = raw_line.size() - 1;
@@ -234,21 +235,11 @@ public:
 
   bool DEBUG_isOpenStream() { return this->inStream.is_open(); }
 
-  // Print the database, default to first 10 units.
-  void printDB(const size_t units = 10) const {
-    for (size_t i = 0; i < units; ++i) {
-      for (auto j : *database[i]) {
-        std::cout << j << std::setw(25);
-      }
-      std::cout << "\n";
-    }
-  }
-
   /**
    * @brief Access the database interface.
    * @return vector<vector<string>*>&
    */
-  std::vector<std::vector<std::string> *> &accessDB() { return this->database; }
+  std::vector<std::list<std::string> *> &accessDB() { return this->database; }
 
   /**
    * @brief TEMPLATE: Implement as needed. Convert a string packet at given
@@ -262,9 +253,9 @@ public:
    * @brief TEMPLATE: Implement as needed. Convert a string packet at given
    * index to a real operating datum.
    * @param index
-   * @return D&
+   * @return D
    */
-  D &rawToRealDatum(size_t index);
+  D rawToRealDatum(size_t index);
 };
 
 #endif
