@@ -244,7 +244,7 @@ public:
    * @param datum
    * @param index
    */
-  void rawToRealDatum(D &datum, size_t index);
+  void convertRaw(D &datum, size_t index);
 
   /**
    * @brief TEMPLATE: Implement as needed. Convert a string packet at given
@@ -252,7 +252,7 @@ public:
    * @param index
    * @return D
    */
-  D rawToRealDatum(size_t index);
+  D convertRaw(size_t index);
 };
 
 #endif
