@@ -32,7 +32,7 @@ void TestHeader(Test<X> &test, int id, const string &name)
     test.Serial = id;
     test.Name   = name;
     cout << "\n-----------------------------------------------------------------------";
-    cout << "\n> SERIAL#" << test.Serial << ": " << test.Name;
+    cout << "\nSERIAL#" << test.Serial << ": " << test.Name;
     cout << "\n-----------------------------------------------------------------------"
          << std::endl;
 }
@@ -49,17 +49,18 @@ void recordTestResult(Test<X> &test_master, std::queue<TestResult> &Results)
 template<typename X>
 void errCheck(bool isFailed, Test<X> &test)
 {
-    clog << "\n\n-CHECK--> " << test.Name;
 
+    clog << "\n-----------------------------------------------------------------------";
     if (isFailed) {
         string err_msg = "\n-ERROR--> FAILED ON TEST #"
                          + std::to_string(test.Serial)
-                         + ": "
-                         + test.Name;
+                         + "<"
+                         + test.Name
+                         + ">\n";
         throw err_msg;
     }
     else {
-        clog << "\n--OK!--> PASSED.\n"
+        clog << "\n--OK!--> PASSED\n"
              << std::endl;
     }
 }
