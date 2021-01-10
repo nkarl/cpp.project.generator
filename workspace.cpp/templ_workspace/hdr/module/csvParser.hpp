@@ -138,14 +138,11 @@ private:
   std::string raw_line;
 
   // Interface for accessing extracted string data.
-  std::vector<std::list<std::string> *> database;
+  std::vector<std::list<std::string>> database;
 
   // Unload database from memory.
   void _clearDatabase() {
-#pragma omp parallel for
-    for (size_t i = 0; i < database.size(); ++i) {
-      delete database[i];
-    }
+    database.clear();
   }
 
   // Get the number of column splitters.
@@ -171,13 +168,12 @@ private:
   }
 
   // Extract a packet of strings and Return a reference to it.
-  std::list<std::string> &_rawToStringPacket() {
+  void _rawToStringPacket() {
     std::istringstream line_stream;
     static std::string token;
 
     // Create a packet at the local scope
-    static std::list<std::string> *packet = nullptr;
-    packet = new std::list<std::string>;
+    std::list<std::string> packet;
 
     // Handle the return carriage character
     size_t tail = raw_line.size() - 1;
@@ -188,9 +184,10 @@ private:
     line_stream.str(raw_line);
     for (auto i = 0; i < columns; ++i) {
       std::getline(line_stream, token, column_wall);
-      packet->push_back(token);
+      packet.push_back(token);
     }
-    return *packet;
+    
+    database.push_back(packet);
   }
 
 public:
@@ -228,7 +225,7 @@ public:
     this->e_validateRawData();
     // Continue to extract data until the end of file:
     while (std::getline(inStream, raw_line)) {
-      database.push_back(&_rawToStringPacket());
+      _rawToStringPacket();
     }
     closeStream();
   }
@@ -239,7 +236,7 @@ public:
    * @brief Access the database interface.
    * @return vector<vector<string>*>&
    */
-  std::vector<std::list<std::string> *> &accessDB() { return this->database; }
+  std::vector<std::list<std::string>> &accessDB() { return this->database; }
 
   /**
    * @brief TEMPLATE: Implement as needed. Convert a string packet at given

@@ -1,7 +1,6 @@
 #include "unit_a.hpp"
 
-int
-main()
+int main()
 {
     /* Start of Test: */
     run_unit_a();
