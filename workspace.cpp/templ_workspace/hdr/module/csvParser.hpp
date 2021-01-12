@@ -27,42 +27,46 @@
  *         REWRITE THE DATABASE WITH HASHING AND MAPPING.
  *         BETTER IMPLEMENTATION OF OMP.
  * ----------------------------------------------------------------------
- * VER: 1.2.0b    2020/11/28
+ * VER: 0.1.5     2021/01/11
+ *      Changed to a better versioning convention.
+ *      Changed a converter template function to be copy assignment
+ *
+ * VER: 0.1.4     2020/11/28
  *      Changed the the converter function to be better typed-safe.
  * 
- * VER: 1.2.0     2020/11/28 Decluttered this template.
+ * VER: 0.1.3     2020/11/28 Decluttered this template.
  *      Tightened up the access privilege into the input stream.
  *      Made the input stream a pure ifstream.
  *      Added a namspace for error messages. Initial implementation of
  *      openMP to database destruction.
  *
- * VER: 1.1.1     2020/11/27
+ * VER: 0.1.2     2020/11/27
  *      Added a function overload for the string-to-data converter function.
  *
- * VER: 1.1.0     2020/11/23
+ * VER: 0.1.1     2020/11/23
  *      Fixed the raw validation function to be safer.
  *      Minor update to template string-to-data converter function.
  *      Initial implementation of Doxygen style to descriptions.
  *
- * VER: 1.0.0      2020/11/16
+ * VER: 0.1.0      2020/11/16
  *      First complete version.
  *
- * VER: 0.2.3     2020/11/11
+ * VER: 0.0.6     2020/11/11
  *      Fixed namespace std error. Prefixed all containers with <std::>.
  *
- * VER: 0.2.2.b   2020/11/05
+ * VER: 0.0.5     2020/11/05
  *      Implemented clearer naming convention for various functions
  *
- * VER: 0.2.2.a   2020/11/02
+ * VER: 0.0.4     2020/11/02
  *      Changed the format of the hidden functions.
  *
- * VER: 0.2.1     2020/11/01
+ * VER: 0.0.3     2020/11/01
  *      Added an overloaded constructor in case delimiter not supplied.
  *
- * VER: 0.2.0     2020/11/01
+ * VER: 0.0.2     2020/11/01
  *      FIXED THE RETURN CARRIAGE BUG.
  *
- * PROTOTYPE VERSION 0.1 COMPLETED 2020/10/31.
+ * PROTOTYPE VERSION 0.0.1 COMPLETED 2020/10/31.
  *
  *************************************************************************/
 
