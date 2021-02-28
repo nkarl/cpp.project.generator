@@ -1,32 +1,10 @@
+## This script is to make a new C++ workspace with user-supplied name
+## by cloning from a seed template.
 #!/bin/sh
 
-
-#######################################################################
-##                                                                   ##
-##  SHELL SCRIPT: TO GENERATE C++ WORKSPACE FOLDER FROM TEMPLATE     ##
-##                                                                   ##
-#######################################################################
-
-    ###################################################################
-    ##  HEADER                                                       ##
-    ###################################################################
-
-
-	###############################################################
-	##  START OF SCRIPT:                                         ##
-	###############################################################
-
-	## CHECK THIS FIRST:
-
-	## path to template:
 function generate_template_cpp() {
 	local TEMPLATE_PATH="$HOME/.custom-scripts/boilerplate-cpp/template"
-    local WORKSPACE_NAME
-
-    echo "\n\tC++ WORKSPACE GENERATOR-------------------------------------------------"
-	## prompt the user to enter name of workspace:
-	echo "\tWhat is the name of this workspace? "
-	read $WORKSPACE_NAME
+    local WORKSPACE_NAME=${1:-template-cpp}
 
 	## If workspace NOT already exists, create it:
 	if [ ! -d "$WORKSPACE_NAME" ]; then
@@ -38,6 +16,4 @@ function generate_template_cpp() {
     	## Navigate into the new workspace
     	cd "$WORKSPACE_NAME"
 }
-	###############################################################
-	##  END OF SCRIPT.                                           ##
-	###############################################################
+alias newcpp=generate_template_cpp
