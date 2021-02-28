@@ -20,7 +20,7 @@
 
 	## path to template:
 function generate_template_cpp() {
-	local TEMPLATE_PATH="$HOME/.custom-scripts/boilerplate-cpp/template-workspace"
+	local TEMPLATE_PATH="$HOME/.custom-scripts/boilerplate-cpp/template"
     local WORKSPACE_NAME
 
     echo "\n\tC++ WORKSPACE GENERATOR-------------------------------------------------"
