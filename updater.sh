@@ -1,5 +1,8 @@
-#!/bin/bash
-DIR="$(cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+#!/usr/bin/sh
+#
+## this captures the current location where the new clone is to be placed in.
+#DIR="$(cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+DIR=$PWD
 
 SCRIPT_PATH="$HOME/.custom-scripts/boilerplate-cpp"
 
