@@ -152,10 +152,10 @@ private:
   // Get the number of column splitters.
   void _getNumsColSplitters() {
     std::getline(inStream, raw_line);
-    for (auto ch : raw_line) {
-      if (ch == column_wall)
-        ++columns;
-    }
+    for (auto ch : raw_line) { columns += (ch == column_wall) ? 1 : 0; }
+      //if (ch == column_wall)
+        //++columns;
+    
     e_validateRawData();
     columns += 2;
   }
