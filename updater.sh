@@ -1,7 +1,7 @@
 #!/bin/bash
 DIR="$(cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
-SCRIPT_PATH="$HOME/.custom-scripts/boilerplate-cpp"
+SCRIPT_PATH="$HOME/.custom-scripts/boilerplate_cpp"
 
 if [ -d "$SCRIPT_PATH" ]; then
     rm -r "$SCRIPT_PATH/"
