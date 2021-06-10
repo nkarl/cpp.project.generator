@@ -9,6 +9,6 @@ elif [ ! -p "$SCRIPT_PATH" ]; then
     mkdir -p $SCRIPT_PATH;
 fi
 
-cp -r "$DIR/boilerplate-cpp/." $SCRIPT_PATH
+cp -r "$DIR/boilerplate_cpp/." $SCRIPT_PATH
 
 ## NEED TO FIND A WAY TO APPEND THE FUNCTION AND ALIAS FLOW TO THE FUNCTION SCRIPT
