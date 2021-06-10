@@ -3,7 +3,7 @@
 #!/bin/sh
 
 function generate_template_cpp() {
-	local TEMPLATE_PATH="$HOME/.custom-scripts/boilerplate-cpp/template"
+	local TEMPLATE_PATH="$HOME/.custom-scripts/boilerplate_cpp/template"
     local WORKSPACE_NAME=${1:-template-cpp}
 
 	## If workspace NOT already exists, create it:
