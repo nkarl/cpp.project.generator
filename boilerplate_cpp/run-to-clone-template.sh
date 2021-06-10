@@ -1,6 +1,6 @@
 ## This script is to make a new C++ workspace with user-supplied name
 ## by cloning from a seed template.
-#!/bin/sh
+#!/bin/zsh
 
 function generate_template_cpp() {
 	local TEMPLATE_PATH="$HOME/.custom-scripts/boilerplate_cpp/template"
