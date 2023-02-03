@@ -24,7 +24,7 @@ AlwaysBreakBeforeMultilineStrings              : false
 AlwaysBreakTemplateDeclarations                : Yes
 BinPackArguments                               : false
 BinPackParameters                              : false
-BraceWrapping           :
+BraceWrapping                                  :
   AfterCaseLabel        : true
   AfterClass            : false
   AfterControlStatement : false
